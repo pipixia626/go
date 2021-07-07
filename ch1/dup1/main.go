@@ -11,6 +11,9 @@ func main() {
 	input := bufio.NewScanner(os.Stdin)
 	for input.Scan() {
 		counts[input.Text()]++
+		if input.Text() == "end" {
+			break
+		}
 	}
 	// NOTE: ignoring potential errors from input.Err()
 	for line, n := range counts {
